@@ -1,0 +1,14 @@
+{
+  "options": [
+    {
+      "id": "123",
+      "isPhone": true,
+      "isName": false
+    },
+    {
+      "id": "321",
+      "isPhone": false,
+      "isName": true
+    }
+  ]
+}

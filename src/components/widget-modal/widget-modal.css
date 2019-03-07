@@ -1,0 +1,21 @@
+:host {
+}
+.modal {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #ccc;
+  background-color: #fff;
+  position: fixed;
+  top: 30%;
+  width: 350px;
+  left: calc(50% - 175px);
+  z-index: 1000;
+  padding: 50px;
+}
+.backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  z-index: 100;
+}
