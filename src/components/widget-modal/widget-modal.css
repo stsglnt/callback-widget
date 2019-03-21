@@ -19,3 +19,9 @@
   position: absolute;
   z-index: 100;
 }
+input, select {
+  width: 100%;
+}
+button[type="submit"] {
+  margin-top: 5px;
+}
