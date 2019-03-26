@@ -3,12 +3,28 @@
     {
       "id": "123",
       "isPhone": true,
-      "isName": false
+      "isName": false,
+      "channels": {
+        "phone": "809344433322",
+        "telegram": "ChatsNovaIT_bot",
+        "skype": "4dbea512-26c0-4adb-916c-4fc0022910d5",
+        "messenger": "1642786955996359",
+        "vk": "club165233705",
+        "whatsapp": "380671234567",
+        "viber": "380671234567"
+      }
     },
     {
       "id": "321",
-      "isPhone": false,
-      "isName": true
+      "channels": {
+        "phone": "809344433322",
+        "telegram": "ChatsNovaIT_bot",
+        "skype": "4dbea512-26c0-4adb-916c-4fc0022910d5",
+        "messenger": "1642786955996359",
+        "vk": "club165233705",
+        "whatsapp": "380671234567",
+        "viber": "380671234567"
+      }
     }
   ]
 }

@@ -22,9 +22,11 @@ export namespace Components {
   }
 
   interface WidgetButton {
+    'configs': any;
     'isOpenChannels': boolean;
   }
   interface WidgetButtonAttributes extends StencilHTMLAttributes {
+    'configs'?: any;
     'isOpenChannels'?: boolean;
     'onOnOpenModal'?: (event: CustomEvent) => void;
   }

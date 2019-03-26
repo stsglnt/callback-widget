@@ -34,7 +34,7 @@ export class WidgetBundle {
     const modal = this.isOpen ? <widget-modal></widget-modal> : null;
     return [
       modal,
-      <widget-button></widget-button>
+      <widget-button configs={this.configs}></widget-button>
     ]
   }
 }
