@@ -1,6 +1,144 @@
+:root {
+  --primary-color: #0040cb;
+}
+
 :host {
   position: fixed;
   bottom: 40px;
   left: 40px;
   z-index: 101;
+}
+.buttons {
+  display: flex;
+}
+.d-flex {
+  display: flex;
+}
+.d-none {
+  display: none;
+}
+.main-button {
+  padding: 30px;
+  border-radius: 50%;
+  background-color: #0038a0;
+  box-shadow: 0 3px 5px 1px rgba(0,0,0,.2);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.channels {
+  display: flex;
+  padding-left: 0;
+}
+.channels li {
+  list-style: none;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: #0038a0;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 25px;
+  font-size: 1.3em;
+  font-weight: 600;
+  height: 25px;
+  color: #fff;
+  cursor: pointer;
+}
+.channels li span {
+  margin-left: -3px;
+}
+.channels li img {
+  width: 20px;
+  display: block;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+.mln-1 {
+  margin-left: -1em;
+}
+.close-button {
+  font-size: 30px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin-bottom: -2px;
+}
+/*Animations*/
+.pulse {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #0038a0;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+.pulse:hover {
+  animation: none;
+}
+.pulsing:hover::after, .pulsing:hover::before {
+  content: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(1, 1, 215, 1);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+.main-button-phone:hover {
+  animation: shake 0.8s;
+  animation-iteration-count: infinite;
+}
+.main-button img {
+  width: 30px;
+}
+
+@keyframes shake {
+  0% { transform:  rotate(0deg); }
+  10% { transform:  rotate(-10deg); }
+  20% { transform:  rotate(0deg); }
+  30% { transform: rotate(-10deg); }
+  40% { transform:  rotate(0deg); }
+  50% { transform:  rotate(-10deg); }
+  60% { transform:  rotate(0deg); }
+  70% { transform: rotate(-10deg); }
+  80% { transform:  rotate(0deg); }
+  90% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+.pulsing:before,
+.pulsing:after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #e7fff5;
+  left: 60px;
+  top: 60px;
+  bottom: 60px;
+  right: 60px;
+  animation: animate 2s linear infinite;
+}
+.pulsing:after {
+  animation-delay: .7s;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
 }

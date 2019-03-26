@@ -21,8 +21,11 @@ export namespace Components {
     'isOpen'?: boolean;
   }
 
-  interface WidgetButton {}
+  interface WidgetButton {
+    'isOpenChannels': boolean;
+  }
   interface WidgetButtonAttributes extends StencilHTMLAttributes {
+    'isOpenChannels'?: boolean;
     'onOnOpenModal'?: (event: CustomEvent) => void;
   }
 
