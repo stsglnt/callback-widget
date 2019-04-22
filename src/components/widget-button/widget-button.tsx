@@ -10,10 +10,11 @@ export class WidgetButton {
   @Prop({mutable: true}) isOpenChannels = false;
   @Prop() configs: any;
   openModal() {
-    this.onOpenModal.emit()
-  }
-  openChannels() {
-    this.isOpenChannels = !this.isOpenChannels;
+    if (this.configs.full_widget) {
+      this.onOpenModal.emit()
+    } else {
+      this.isOpenChannels = !this.isOpenChannels;
+    }
   }
   render() {
     const style = {
@@ -21,7 +22,7 @@ export class WidgetButton {
     };
     return [
       <div class="buttons">
-        <a href="#" id="popup__toggle" onClick={this.openChannels.bind(this)}>
+        <a href="#" id="popup__toggle" onClick={this.openModal.bind(this)}>
           <div class={this.isOpenChannels ? "d-none" : "circlephone"} style={style}></div>
           <div class={this.isOpenChannels ? "d-none" : "circle-fill"} style={style}></div>
           <div class="img-circle" style={style}>

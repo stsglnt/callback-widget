@@ -1,0 +1,8 @@
+:root {
+  --app-primary-color: #488aff;
+  --app-secondary-color: #78c6ff;
+  --app-modal-bg-color: #f2f2f2;
+}
+.d-flex {
+  display: flex;
+}

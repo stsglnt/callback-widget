@@ -2,26 +2,99 @@
 }
 .modal {
   font-family: Arial, sans-serif;
-  border: 1px solid #ccc;
+  border-radius: 5px;
   box-shadow: 1px 1px 1px #ccc;
-  background-color: #fff;
+  background-color: var(--app-modal-bg-color);
   position: fixed;
   top: 30%;
-  width: 350px;
-  left: calc(50% - 175px);
-  z-index: 1000;
+  width: 700px;
+  left: calc(50% - 350px);
+  z-index: 999991;
   padding: 50px;
+}
+.modal.header, .modal.body, .modal.footer {
+  display: flex;
+}
+.modal.body.top {
+  position: relative;
+  width: 600px;
+  margin: auto;
+  max-height: 165px;
+}
+.modal .body .top .photo {
+  display: inline-block;
+  vertical-align: top;
+  width: 124px;
+  height: 124px;
+}
+
+.modal .body .top .message {
+  width: 426px;
+  margin-left: 40px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.modal .body .bottom {
+  width: 600px;
+  position: relative;
+  margin: 42px auto auto;
+}
+.modal.header {
+  flex-flow: row-reverse;
 }
 .backdrop {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
-  z-index: 100;
+  z-index: 99999;
 }
+.form-group {
+  display: flex;
+}
+.form-group .phone_input {
+  flex-basis: 50%;
+}
+.form-group .phone_date {
+  flex-basis: 20%;
+}
+.form-group .phone_hour {
+  flex-basis: 20%;
+}
+.form-group .phone_minute {
+  flex-basis: 10%;
+}
+
 input, select {
   width: 100%;
 }
 button[type="submit"] {
   margin-top: 5px;
+}
+/*Close button*/
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }

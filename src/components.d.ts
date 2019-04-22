@@ -12,6 +12,14 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface WidgetDropdown {
+    'name': string;
+  }
+  interface WidgetDropdownAttributes extends StencilHTMLAttributes {
+    'name'?: string;
+    'onOnToggle'?: (event: CustomEvent) => void;
+  }
+
   interface CallbackWidget {
     'id': string;
     'isOpen': boolean;
@@ -31,23 +39,36 @@ export namespace Components {
     'onOnOpenModal'?: (event: CustomEvent) => void;
   }
 
-  interface WidgetModal {}
-  interface WidgetModalAttributes extends StencilHTMLAttributes {}
+  interface WidgetModal {
+    'configs': any;
+  }
+  interface WidgetModalAttributes extends StencilHTMLAttributes {
+    'configs'?: any;
+    'onOnCloseModal'?: (event: CustomEvent) => void;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
+    'WidgetDropdown': Components.WidgetDropdown;
     'CallbackWidget': Components.CallbackWidget;
     'WidgetButton': Components.WidgetButton;
     'WidgetModal': Components.WidgetModal;
   }
 
   interface StencilIntrinsicElements {
+    'widget-dropdown': Components.WidgetDropdownAttributes;
     'callback-widget': Components.CallbackWidgetAttributes;
     'widget-button': Components.WidgetButtonAttributes;
     'widget-modal': Components.WidgetModalAttributes;
   }
 
+
+  interface HTMLWidgetDropdownElement extends Components.WidgetDropdown, HTMLStencilElement {}
+  var HTMLWidgetDropdownElement: {
+    prototype: HTMLWidgetDropdownElement;
+    new (): HTMLWidgetDropdownElement;
+  };
 
   interface HTMLCallbackWidgetElement extends Components.CallbackWidget, HTMLStencilElement {}
   var HTMLCallbackWidgetElement: {
@@ -68,12 +89,14 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'widget-dropdown': HTMLWidgetDropdownElement
     'callback-widget': HTMLCallbackWidgetElement
     'widget-button': HTMLWidgetButtonElement
     'widget-modal': HTMLWidgetModalElement
   }
 
   interface ElementTagNameMap {
+    'widget-dropdown': HTMLWidgetDropdownElement;
     'callback-widget': HTMLCallbackWidgetElement;
     'widget-button': HTMLWidgetButtonElement;
     'widget-modal': HTMLWidgetModalElement;

@@ -2,8 +2,7 @@
   "options": [
     {
       "id": "123",
-      "isPhone": true,
-      "isName": false,
+      "full_widget": true,
       "channels": {
         "phone": "809344433322",
         "telegram": "ChatsNovaIT_bot",
@@ -12,10 +11,15 @@
         "vk": "club165233705",
         "whatsapp": "380671234567",
         "viber": "380671234567"
+      },
+      "widget_options": {
+        "color": "#29AEE3",
+        "modal_bg_color": "#f2f2f2"
       }
     },
     {
       "id": "321",
+      "full_widget": false,
       "channels": {
         "phone": "809344433322",
         "telegram": "ChatsNovaIT_bot",
@@ -24,6 +28,10 @@
         "vk": "club165233705",
         "whatsapp": "380671234567",
         "viber": "380671234567"
+      },
+      "widget_options": {
+        "color": "#29AEE3",
+        "modal_bg_color": "#f2f2f2"
       }
     }
   ]
