@@ -54,6 +54,7 @@
 }
 .form-group {
   display: flex;
+  height: 40px;
 }
 .form-group .phone_input {
   flex-basis: 30%;

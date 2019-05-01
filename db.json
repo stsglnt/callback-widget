@@ -15,7 +15,7 @@
       "widget_options": {
         "color": "#29AEE3",
         "modal_bg_color": "#f2f2f2",
-        "isUkraine": "true"
+        "isUkraine": true
       }
     },
     {
