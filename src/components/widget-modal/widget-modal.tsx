@@ -9,6 +9,7 @@ import IMask from 'imask';
 export class WidgetModal {
   @Prop() configs: any;
   @State() value: string;
+  @State() isUkraine: boolean;
   @State() isWorkingTime: string;
   @State() timer = '00:30';
   @Event() onCloseModal: EventEmitter;
@@ -27,7 +28,10 @@ export class WidgetModal {
   }
   componentWillLoad(){
     if (this.configs.widget_options.isUkraine) {
-      this.value = '+38'
+      this.value = '+38';
+      this.isUkraine = true;
+    } else {
+      this.isUkraine = false;
     }
   }
   componentDidLoad() {
@@ -46,6 +50,13 @@ export class WidgetModal {
       });
     }
   }
+  onKeyPressed(e) {
+    if ((e.code === 'Backspace' || e.code === 'Delete' || e.code === 'KeyX')
+      && e.target.value.length < 5
+      && this.isUkraine) {
+      e.preventDefault();
+    }
+  }
 
   render() {
     return [
@@ -61,7 +72,7 @@ export class WidgetModal {
           </div>
           <div class="bottom">
             <form class="form-group" onSubmit={() => this.handleSubmit()}>
-              <input id="phone-input" class="phone_input" value={this.value}/>
+              <input id="phone-input" class="phone_input" onKeyDown={this.onKeyPressed.bind(this)} value={this.value}/>
               {this.isWorkingTime && (
                 <select class="phone_date custom_select">
                   <option value="123">123</option>
