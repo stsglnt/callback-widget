@@ -2,7 +2,7 @@
   "options": [
     {
       "id": "123",
-      "full_widget": true,
+      "full_widget": false,
       "channels": {
         "phone": "809344433322",
         "telegram": "ChatsNovaIT_bot",

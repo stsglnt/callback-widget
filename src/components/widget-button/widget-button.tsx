@@ -7,6 +7,7 @@ import {Component, Event, EventEmitter, Prop} from '@stencil/core';
 })
 export class WidgetButton {
   @Event() onOpenModal: EventEmitter;
+  @Event() onOpenChannels: EventEmitter;
   @Prop({mutable: true}) isOpenChannels = false;
   @Prop() configs: any;
   openModal() {
@@ -14,6 +15,7 @@ export class WidgetButton {
       this.onOpenModal.emit()
     } else {
       this.isOpenChannels = !this.isOpenChannels;
+      this.onOpenChannels.emit()
     }
   }
   render() {

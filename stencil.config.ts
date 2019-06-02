@@ -3,7 +3,7 @@ import { Config } from '@stencil/core';
 export const config: Config = {
   namespace: 'callbackwidget',
   bundles: [
-    {components: ['callback-widget', 'widget-modal', 'widget-button', 'widget-dropdown']}
+    {components: ['callback-widget', 'widget-modal', 'widget-button', 'widget-dropdown', 'widget-phone']}
   ],
   outputTargets:[
     { type: 'dist' },

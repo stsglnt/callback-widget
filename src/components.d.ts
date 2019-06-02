@@ -23,10 +23,12 @@ export namespace Components {
   interface CallbackWidget {
     'id': string;
     'isOpen': boolean;
+    'isOpenChannels': boolean;
   }
   interface CallbackWidgetAttributes extends StencilHTMLAttributes {
     'id'?: string;
     'isOpen'?: boolean;
+    'isOpenChannels'?: boolean;
   }
 
   interface WidgetButton {
@@ -36,6 +38,7 @@ export namespace Components {
   interface WidgetButtonAttributes extends StencilHTMLAttributes {
     'configs'?: any;
     'isOpenChannels'?: boolean;
+    'onOnOpenChannels'?: (event: CustomEvent) => void;
     'onOnOpenModal'?: (event: CustomEvent) => void;
   }
 
@@ -46,6 +49,9 @@ export namespace Components {
     'configs'?: any;
     'onOnCloseModal'?: (event: CustomEvent) => void;
   }
+
+  interface WidgetPhone {}
+  interface WidgetPhoneAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
@@ -54,6 +60,7 @@ declare global {
     'CallbackWidget': Components.CallbackWidget;
     'WidgetButton': Components.WidgetButton;
     'WidgetModal': Components.WidgetModal;
+    'WidgetPhone': Components.WidgetPhone;
   }
 
   interface StencilIntrinsicElements {
@@ -61,6 +68,7 @@ declare global {
     'callback-widget': Components.CallbackWidgetAttributes;
     'widget-button': Components.WidgetButtonAttributes;
     'widget-modal': Components.WidgetModalAttributes;
+    'widget-phone': Components.WidgetPhoneAttributes;
   }
 
 
@@ -88,11 +96,18 @@ declare global {
     new (): HTMLWidgetModalElement;
   };
 
+  interface HTMLWidgetPhoneElement extends Components.WidgetPhone, HTMLStencilElement {}
+  var HTMLWidgetPhoneElement: {
+    prototype: HTMLWidgetPhoneElement;
+    new (): HTMLWidgetPhoneElement;
+  };
+
   interface HTMLElementTagNameMap {
     'widget-dropdown': HTMLWidgetDropdownElement
     'callback-widget': HTMLCallbackWidgetElement
     'widget-button': HTMLWidgetButtonElement
     'widget-modal': HTMLWidgetModalElement
+    'widget-phone': HTMLWidgetPhoneElement
   }
 
   interface ElementTagNameMap {
@@ -100,6 +115,7 @@ declare global {
     'callback-widget': HTMLCallbackWidgetElement;
     'widget-button': HTMLWidgetButtonElement;
     'widget-modal': HTMLWidgetModalElement;
+    'widget-phone': HTMLWidgetPhoneElement;
   }
 
 
