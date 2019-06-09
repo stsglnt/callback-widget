@@ -43,7 +43,7 @@ export class WidgetBundle {
       return null;
     }
     const modal = this.isOpen ? <widget-modal configs={this.configs}/> : null;
-    const small_phone = this.isOpenChannels ? <widget-phone/> : null;
+    const small_phone = this.isOpenChannels ? <widget-phone configs={this.configs}/> : null;
     return [
       modal,
       small_phone,

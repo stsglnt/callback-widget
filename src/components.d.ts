@@ -50,8 +50,16 @@ export namespace Components {
     'onOnCloseModal'?: (event: CustomEvent) => void;
   }
 
-  interface WidgetPhone {}
-  interface WidgetPhoneAttributes extends StencilHTMLAttributes {}
+  interface WidgetPhone {
+    'configs': any;
+    'currentFlag': string;
+    'value': string;
+  }
+  interface WidgetPhoneAttributes extends StencilHTMLAttributes {
+    'configs'?: any;
+    'currentFlag'?: string;
+    'value'?: string;
+  }
 }
 
 declare global {

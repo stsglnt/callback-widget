@@ -44,7 +44,7 @@ export class WidgetModal {
     } else {
       IMask(input, {
         mask: Number,
-        signed: false,  // disallow negative
+        signed: false,
         min: -10000,
         max: 10000
       });
